@@ -18,7 +18,7 @@ type Ranges struct {
 }
 
 func Solve() {
-	lines := strings.Split(reader.Read("/day5/input"), "\n")
+	lines := reader.ReadLines("/day5/input")
 
 	seeds := make([]int64, 0)
 	rangeMap := make(map[string][]Ranges)

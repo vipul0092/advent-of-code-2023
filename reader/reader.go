@@ -3,6 +3,7 @@ package reader
 import (
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func check(e error) {
@@ -16,4 +17,8 @@ func Read(path string) string {
 	dat, err := os.ReadFile(absPath)
 	check(err)
 	return string(dat)
+}
+
+func ReadLines(path string) []string {
+	return strings.Split(Read(path), "\n")
 }
