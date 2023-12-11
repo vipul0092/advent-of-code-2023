@@ -1,7 +1,7 @@
 package day11
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	mapset "github.com/deckarep/golang-set/v2"
 )
@@ -12,7 +12,7 @@ type Point struct {
 }
 
 func Solve() {
-	lines := reader.ReadLines("/day11/input")
+	lines := utils.ReadLines("/day11/input")
 	norows := mapset.NewSet[int]()
 	nocols := mapset.NewSet[int]()
 	galaxies := make([]Point, 0)

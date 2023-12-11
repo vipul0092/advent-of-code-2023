@@ -1,7 +1,7 @@
 package day7
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"sort"
 	"strconv"
@@ -28,7 +28,7 @@ func init() {
 
 func Solve() {
 	//lines := strings.Split(input, "\n")
-	lines := reader.ReadLines("/day7/input")
+	lines := utils.ReadLines("/day7/input")
 
 	handmap := make(map[string]int)
 	hands := make([]string, 0)

@@ -1,7 +1,7 @@
 package day1
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"strings"
 )
@@ -18,7 +18,7 @@ var nos = []string{"one", "two", "three", "four", "five", "six", "seven", "eight
 
 func Solve() {
 	//lines := strings.Split(input, "\n")
-	lines := strings.Split(reader.Read("/day1/input"), "\n")
+	lines := strings.Split(utils.Read("/day1/input"), "\n")
 
 	sum := 0
 	for _, line := range lines {

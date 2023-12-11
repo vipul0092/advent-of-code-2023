@@ -1,7 +1,7 @@
 package day6
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"strconv"
 	"strings"
@@ -11,7 +11,7 @@ var input = `Time:      7  15   30
 Distance:  9  40  200`
 
 func Solve() {
-	input = reader.Read("/day6/input")
+	input = utils.Read("/day6/input")
 	lines := strings.Split(input, "\n")
 
 	times := getNumbers(lines[0])

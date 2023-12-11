@@ -1,13 +1,13 @@
 package day8
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"strings"
 )
 
 func Solve() {
-	lines := reader.ReadLines("/day8/input")
+	lines := utils.ReadLines("/day8/input")
 	directions := lines[0]
 
 	paths := make(map[string][]string)

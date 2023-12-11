@@ -1,7 +1,7 @@
 package day10
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	mapset "github.com/deckarep/golang-set/v2"
 )
@@ -43,7 +43,7 @@ func init() {
 }
 
 func Solve() {
-	lines = reader.ReadLines("/day10/input")
+	lines = utils.ReadLines("/day10/input")
 	var spos Point
 	allpoints := make([]Point, 0)
 	for i, line := range lines {

@@ -1,7 +1,7 @@
 package day9
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"strconv"
 	"strings"
@@ -15,7 +15,7 @@ var part2Func = func(n int, ns []int) int {
 }
 
 func Solve() {
-	lines := reader.ReadLines("/day9/input")
+	lines := utils.ReadLines("/day9/input")
 	part1 := 0
 	part2 := 0
 

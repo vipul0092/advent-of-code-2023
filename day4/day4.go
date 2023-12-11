@@ -1,7 +1,7 @@
 package day4
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	mapset "github.com/deckarep/golang-set/v2"
 	"strconv"
@@ -17,7 +17,7 @@ Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11`
 
 func Solve() {
 	//lines := strings.Split(input, "\n")
-	lines := strings.Split(reader.Read("/day4/input"), "\n")
+	lines := strings.Split(utils.Read("/day4/input"), "\n")
 
 	sum := 0
 	counts := make(map[int]int)

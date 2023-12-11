@@ -1,7 +1,7 @@
 package day2
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"strconv"
 	"strings"
@@ -19,7 +19,7 @@ const blue = 14
 
 func Solve() {
 	//lines := strings.Split(input, "\n")
-	lines := strings.Split(reader.Read("/day2/input"), "\n")
+	lines := strings.Split(utils.Read("/day2/input"), "\n")
 
 	sum := 0
 	for _, line := range lines {

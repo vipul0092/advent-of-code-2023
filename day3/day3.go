@@ -1,7 +1,7 @@
 package day3
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	mapset "github.com/deckarep/golang-set/v2"
 	"strings"
@@ -32,7 +32,7 @@ type Num struct {
 
 func Solve() {
 	//lines := strings.Split(input, "\n")
-	lines := strings.Split(reader.Read("/day3/input"), "\n")
+	lines := strings.Split(utils.Read("/day3/input"), "\n")
 
 	numsmap := make(map[Point]int)
 	numbers := make([]Num, 0)

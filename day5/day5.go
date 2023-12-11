@@ -1,7 +1,7 @@
 package day5
 
 import (
-	"advent-of-code/reader"
+	"advent-of-code/utils"
 	"fmt"
 	"math"
 	"sort"
@@ -18,7 +18,7 @@ type Ranges struct {
 }
 
 func Solve() {
-	lines := reader.ReadLines("/day5/input")
+	lines := utils.ReadLines("/day5/input")
 
 	seeds := make([]int64, 0)
 	rangeMap := make(map[string][]Ranges)
