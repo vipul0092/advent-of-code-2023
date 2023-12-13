@@ -18,6 +18,7 @@
 # vendor/
 
 .idea/
+*/input
 
 # Go workspace file
 go.work
