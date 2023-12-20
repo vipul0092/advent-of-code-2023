@@ -28,14 +28,14 @@ func Solve() {
 	fmt.Println("Part 1: ",
 		getCount(func(current string) bool { return current != "ZZZ" }, "AAA", directions, paths))
 
-	counts := make([]int64, len(starts))
+	counts := make([]int, len(starts))
 	for i, start := range starts {
 		count := getCount(func(current string) bool { return !strings.HasSuffix(current, "Z") },
 			start, directions, paths)
-		counts[i] = int64(count)
+		counts[i] = count
 	}
 
-	fmt.Println("Part 2: ", lcm(counts))
+	fmt.Println("Part 2: ", utils.LCM(counts))
 }
 
 func getCount(loopCheck func(current string) bool, start, directions string, paths map[string][]string) int {
@@ -55,20 +55,4 @@ func getCount(loopCheck func(current string) bool, start, directions string, pat
 		steps++
 	}
 	return steps
-}
-
-func lcm(numbers []int64) int64 {
-	current := numbers[0]
-	for i := 1; i < len(numbers); i++ {
-		current = (current * numbers[i]) / gcd(current, numbers[i])
-	}
-	return current
-}
-
-func gcd(a, b int64) int64 {
-	if b == 0 {
-		return a
-	} else {
-		return gcd(b, a%b)
-	}
 }
