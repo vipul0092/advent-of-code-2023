@@ -21,9 +21,10 @@ type Pwl struct {
 }
 
 type DP [142][142][142][142]int32
-type GRAPH map[int]map[int]int
+type GRAPH [142][142]int
 
 var graph GRAPH
+var maxid int
 
 var dp DP
 
@@ -66,6 +67,7 @@ func SolvePart2() {
 			}
 		}
 	}
+	maxid = id
 
 	graph = GRAPH{}
 	for pt := range compressedGraphNodes {
@@ -80,11 +82,11 @@ func dfs2(current, prev, end int, visited int) int {
 		return 0
 	}
 	maxi := -1
-	for neighbor, distance := range graph[current] {
-		if neighbor != prev && !isBitSet(visited, neighbor) {
-			d := dfs2(neighbor, current, end, setBit(visited, neighbor))
+	for j := 1; j < maxid; j++ {
+		if graph[current][j] != 0 && j != prev && !isBitSet(visited, j) {
+			d := dfs2(j, current, end, setBit(visited, j))
 			if d != -1 {
-				maxi = max(maxi, d+distance)
+				maxi = max(maxi, d+graph[current][j])
 			}
 		}
 	}
@@ -138,12 +140,6 @@ func populateGraphForNode(point Point, compressedGraphNodes map[Point]int, adjac
 		for _, neighbor := range adjacencyList[p] {
 			if !visited.Contains(neighbor) {
 				if nid, has := compressedGraphNodes[neighbor]; has {
-					if _, hid := graph[id]; !hid {
-						graph[id] = make(map[int]int)
-					}
-					if _, hnid := graph[nid]; !hnid {
-						graph[nid] = make(map[int]int)
-					}
 					graph[id][nid] = distance
 					graph[nid][id] = distance
 				} else {
